@@ -1,0 +1,39 @@
+Ok so this is my notes for the tast
+the time is 4:43pm on October 1st 2021, I just opened up the pdf.
+
+It looks like the maximum value is given as 3999, MMMCMXCIX
+
+Here are the basic 7:
+I= 1
+V = 5
+X = 10
+L = 50
+C = 100
+D = 500
+M = 1000
+
+I think my program is going to have to be able to add the numbers together, where numbers reading left to right are added up sequentially, but then smaller symbols are going to have to be subtracted.
+If they are equal I think they are added.
+ok, and subtraction only works if the value in front is big enough, like you can't do IC but you can do XC.
+I'm not sure exactly how that works just yet based on this prompt but I'll fine tune it with testing later on, I think.
+The provided website will be useful in testing.
+
+Ok so I think to start the program I'm going to have to identify where the first largest value is, and base the arithmetic off of that value.
+I'm assuming that the user will input a string. I think I will just make a loop in my code that repeats asking for input and converting that input until 0 is input, that way I can test multiple values without having to rerun the code.
+That can be done with a simple while loop.
+
+Oh, I forgot to say, I am going to be writing in C++ because that is what my classes are using right now and it is what I am most familiar with at the given moment. It should be fine for this.
+
+I may want to use some other data types, for example, I may want to convert the string to an array right off the bat. I think I may start by doing that, arrays are easier to work with than strings. I'll first write a function that returns an array, converting the roman numeral into a list of integer values in the order given in the string.
+
+In that array I'm going to use a switch statement to switch through each character in the given string, and convert the value of each character individually.
+
+Ah, it appears that C does not allow you to return an array. That is why the compiler was not very happy. should have done this in java.
+No matter, My code will just be a little less clean. I'll tuck the array converter code into the beginning of main because I don't want to mess with pointers today, I haven't really learned that yet, we didn't do that in my high school classes :)
+
+i guess it;s time to set up my big loop
+
+ok the array conveter is done, time to start actually calculating the integer. I can use an integer, these numbers won't get very big. The first step is to identify the biggest part of the array
+I'll just put that if() statement inside the for(switch()) that I already made, that will save on the amount of loops that I make
+
+I forgot to mention, I'm using CLion as my IDE today, It has very easy debugging, it's provided in my intro class, and I know it works.
