@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void PrintNumberTooBig() {
+void PrintNumberTooBig() { // this function just prevents a little bit of redundant code.
     cout << "Your input is invalid! Please reread the instructions and try another value" << endl;
 }
 

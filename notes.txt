@@ -96,3 +96,7 @@ ok at this point the code is as done as it is going to get, I've made it reject 
 TIME ELAPSED:
 when I started typing code: 3h45min
 when I started reading the prompt and planning: just under 4h.
+
+all in all I'm happy with what I've done, I think if I hadn't gone on so many false leads in solving this problem I might have had time to reject incorrect roman numerals, but I'm satisfied with this for now. Thanks!
+
+The time is 8:31pm on the same day, and I'm entering my last keystrokes, and pushing my commits to origin. Email will be sent shortly.
