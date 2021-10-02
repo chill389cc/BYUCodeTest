@@ -79,4 +79,20 @@ ah dang there is a flaw, a stupid one. next time I shouldn't test with only a 4-
 decimal to roman numerals is a whole lot less simple than the other way around. My code isn't that pretty but it works. if I had more time I would have probably thought of a more efficient solution, especially for the decimal to roman numeral, or if I was a better programmer, but as it stands the code works, program size isn't a very important constraint these days (unless they want to embed this program on a microcontroller somewhere for dec-to-romannumeral on the fly haha) so I think it is fine now. Now I think I will use the remaining 90 minutes on my timer to clean up and error correct on the Roman Numeral to decimal.
 and then if I have leftover time instead of just submitting early I think I'll use that to brainstorm a neater way to convert decimal to roman numerals. Mine is UGLY as it stands.
 
+I've spent the last little bit cleaning my code and adding in a bit that prevents you from trying to convert any integers that are too big.
 
+I haven't really gotten around to validating correct roman numeral input, but with only 35 minutes left I'm going to look back at the rubric to see what documentation I need to include.
+
+ok so just an executable, which my compiler has made a UNIX executable (hopefully that runs on windows, it's been a while, I'm not actually sure what executables windows can run)
+as well as the source code (just main.cpp here) and my notes, which are this text file. That should be fine. It is already in the repo so I just need to git commit, git push, and then I'll be set to email the link off.
+
+currently my program operates perfectly (To my knowledge), though it isn't as smart as the website given: it can't tell you when your roman numeral is incorrect. Luckily, I don't see that as part of the rubric, all it says is that it needs to convert roman numerals to decimal numbers and decimal numbers back to roman numerals. My program ALSO converts incorrect roman numerals to decimals, but under the time constraint I think I'm going to focus on using the time to verify correct input if the user puts in a negative number, or something with lowercase, for example. That is how I will use this last 30 minutes.
+
+there is some weird code whitespace issues in my nested switch statements but I don't want to waste time fixing those. sorry!
+
+
+ok at this point the code is as done as it is going to get, I've made it reject anything that isn't 0-3999 and alphabet characters, as near as I can tell, but the only problem is it doesn't reject improper roman numerals. We'll get em next time. I still have 15 minutes but I'm not sure how many minutes I spent reading the prompt before I started the timer, so I'm just going to commit and push now, and send.
+
+TIME ELAPSED:
+when I started typing code: 3h45min
+when I started reading the prompt and planning: just under 4h.
