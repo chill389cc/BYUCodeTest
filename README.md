@@ -13,3 +13,8 @@ open up a terminal, navigate to the main directory of this project (the same fol
 yeah I have no idea really how to do this but I'll keep looking until I'm done. You can see from my commits that the code was done in 4 hours. 
 
 if you want something compiled for windows, I'll keep researching when I have time, but I am pretty lost right now with all of the visualstudio libraries and intalling compilers and all that. I did it once for visualstudio but I don't have the time right now to figure it out again. I can try and have something compiled for windows tomorrow, but please let me know if the unix executable works for you thus far. 
+
+
+
+I will try and follow this tutorial soon:
+https://stackoverflow.com/a/46246724
