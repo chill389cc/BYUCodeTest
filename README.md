@@ -4,9 +4,11 @@ A repo to submit my code for this coding test for a student programmer job
 Hello! My name is Caleb Hill, I'm writing this as a finishing touch for the coding test in my application to become a student programmer.
 
 HOW TO RUN:
+
 Option 1: Find a way to run the executable "RUN_ME" on a unix terminal:
 * open up a (unix) terminal
 * navigate to the main directory of this project (the same folder this README is in) and type "./RUN_ME" without the quotation marks. This will definitely work on mac, linux, msys2, linux subsystem, or another emulated environment. 
+
 Option 2: http://cpp.sh/2dmzp
 * this link will work for anyone, no excuse, as long as it stays hosted. If it doesn't work, just copy and paste the code from main.cpp to cpp.com. 
 
