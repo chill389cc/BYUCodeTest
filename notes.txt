@@ -37,3 +37,46 @@ ok the array conveter is done, time to start actually calculating the integer. I
 I'll just put that if() statement inside the for(switch()) that I already made, that will save on the amount of loops that I make
 
 I forgot to mention, I'm using CLion as my IDE today, It has very easy debugging, it's provided in my intro class, and I know it works.
+for numbers like 904 (CMIV), there are two instances of arithmetic where the number comes before the main number, so I think I might want to do something recursive here, as that process could be infinit (even though in this case the max number is 4K)
+Basically You take your base number, subtract whatever single digit might be to the left of it, and then add the sum of the right, even if that right sum includes some additional left-subtraction. Yes, think I'll make a recursive function.
+
+oh darn, I've come up against the 'i don't know how to pass an array into a function in c++' problem again. maybe no recursion today.
+
+I've made a int 'maxValueIndex' to keep track of where the biggest values are in the center of the roman numeral. instead of making a recursive function, I think I'll just start calculations with that where it is and then move that value to the next 'center' once I've calculated the current center. For example, if my function is CMIV, once I've calculated the M-C to get 900, I'll move the maxValueIndex to the V and then calculate that one accordingly, and add it to my previous result to get (1000-100)+(5-1). The result will be the same as a recursive function, just a little uglier.
+
+Dang, if only I had waited until after we learned pointers in my class to apply for this job. haha.
+
+oh no, I forgot about the possibility of something like MMCMIV, where ther is a smaller number between the M's. I think I'll rethink my strategy to calculate sequentially down the array. If the value to the right of $index is smaller than it, then add it to the sum. If it is bigger, then subtract the value at $index from the value to the right, and then move on to the next set. UNLESS the value AFTER the one to the right is bigger than the one to the right, then skip it and do the calculation next.
+maybe the 'maxValueIndex' thinking might not be correct after all.
+
+oops, I didn't read the prompt correctly. It seems that we have to be able to convert integers to roman numerals as well. Unfortunately I think I'm going to have to do something completely different for that, but I'll finish up this part and work on that second.
+
+the prompt isn't very clear as to if it wants me to tell it when it is an incorrect roman numeral inserted or not? For now I won't add that functionality but if I have time later I will.
+Ok so I think I have basic functionality going on the roman numeral to decimal calculator, but I'm going to do a little more testing before I move onto the decimal to roman numeral converter. Then the only thing left is to add in error checking.
+Essentially what I've been doing is looping through the array. if it is on the last index in the array, just add what is there to the total. I can do this because of the subtraction checking. If it is not on the last element on the array, then it checks to see if subtraction ist aking place. If it is taking place then perform the subtraction, add it to the total, and skip to the next element because it just got added in combination (subtraction combination) with the current element. That way if IV is input, and the subtraction is performed, the V is not then calculated independently. It will have been skipped. That is all that happens now. AT this point the user can do whatever he wants, including as many IIII's as he wants, and doing CMMM for example instead of the correct MMCM, but I will work on fixing that later, perhaps I can implement that error checking into the string-to-array loop.
+
+also, I got rid of the maxValueIndex variable, once I better understood how to calculate these things. Roman numerals are fun.
+
+I'm working on a way to easily detect if the user inputs a decimal or a string of characters. That way I can just run the respective piece of code with no stupid 'which would you like to do, dec to roman or roman to dec?' questions for the user. I think I can do string comparisons. Any string of only decimals will always be smaller than a string with any alphanumeric characters, right? Let's check...
+yes, with some preliminary testing I think if I just do a statement after checking if the user wants to quit, that checks to see if the user-provided input (as a string) is less than "A", then any string of decimals will be less than even the shortest alphabetic string. easy peasy
+
+now I'm going to do a check to make sure that if it passed the 'is it a decimal' test, that it actually  is a decimal, and can safetly be stored to an int variable.
+
+there is a isdigit() operation for characters in the iostream library so that is nice. I'll just iterate through the string to see if they are all digits, and then in the same loop add them to a number. I'll start from the right side of the string and multiply each digit by $index power of 10 before adding it so that it comes out correct.
+
+One thing I didn't consider is if it might be easier to convert the decimal to a roman numeral while it is still a string? Then I can easily extract the different decimal places. Yes, I think that might be easier. Let's think:
+assuming a max value of 3999, I can take the first digit (3) and compare it to the second digit. If that second digit is a 9, then I know that I have to add three M's and then a CM to get the 900 correctly. If it is 3899, then I just add three MMM's and then treat the 800 like it's own entity. so basically if the next decimal place is
+well, in short, if any given decimal place is a 9, then I needto append IX, XC, or CM to the end of the numeral accordingly. I think that is the only way to get a nine. THe only way to get an eight is VIII, LXXX, or DCCC. In this way, I think we can just take each decimal place and slap on the respective roman numeral combination to get that digit. Let's do some testing!
+
+so I'll comment out for now the code that tests to see if every place is a decimal and then make it an int, but when I'm scanning each decimal place in the string I'll check first to make sure it is a digit 0-9.
+oh, wait, those code structures look the same. oh well.
+
+ok so I just finished working out the first draft of the dec to string conversion but I have it backwards, I'm not sure how I did that. Right now 456 returns IVLDC, haha. I'll take another look at my loops...
+ah, I've been thinking about strings wrong. I'm really an idiot here. for some reason I built this code to read that index 0 of a string containing 3999 would be 9, even though obviously it is 3. Ok, some quit revisions are necessary.
+ok with that fixed it looks like the dec to string conversion is done (and by that I mean converting decimal numbers to roman numerals ), so I'll do some testing, then clean up the code, and then work on error correction last. The time on the clock shows 1h46m remaining. Should be enough time to get everything working, assuming I don't have any major flaws in my dec to romanDec conversion.
+ah dang there is a flaw, a stupid one. next time I shouldn't test with only a 4-digit roman numberal haha. one sec...
+
+decimal to roman numerals is a whole lot less simple than the other way around. My code isn't that pretty but it works. if I had more time I would have probably thought of a more efficient solution, especially for the decimal to roman numeral, or if I was a better programmer, but as it stands the code works, program size isn't a very important constraint these days (unless they want to embed this program on a microcontroller somewhere for dec-to-romannumeral on the fly haha) so I think it is fine now. Now I think I will use the remaining 90 minutes on my timer to clean up and error correct on the Roman Numeral to decimal.
+and then if I have leftover time instead of just submitting early I think I'll use that to brainstorm a neater way to convert decimal to roman numerals. Mine is UGLY as it stands.
+
+
