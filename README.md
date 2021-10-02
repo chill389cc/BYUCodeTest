@@ -18,3 +18,4 @@ if you want something compiled for windows, I'll keep researching when I have ti
 
 I will try and follow this tutorial soon:
 https://stackoverflow.com/a/46246724
+Ok on second thought this tutorial says it requires windows headers for Visual Studio, so im not sure ill be able to do that. Maybe ill just get ahold of a windows machine later. 
