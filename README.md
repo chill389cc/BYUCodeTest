@@ -12,4 +12,6 @@ open up a terminal, navigate to the main directory of this project (the same fol
 
 There isn't any easy solution to compile the code on my mac to an exe, though I just spent the last hour and a half researching and trying to figure out toolchains and compilers and libraries and build files, but I've never learned about those and frankly it's all greek to me at this point. I know what a compiler does but I don't know how to configure a makefile or link toolchains. 
 
+IN THE MEANTINE: You can technically run the code on online compilers, for example, here: http://cpp.sh/2dmzp
+
 On saturday I'll try to get ahold of a windows machine to install visual studio and compile the cpp code to an executable for you to test. Sorry about that inconvenience!
