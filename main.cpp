@@ -30,6 +30,7 @@ int main() {
             continueLooping = false;
             cout << "Goodbye!" << endl;
         }
+         //Run this path to convert decimal to roman numeral
         else if (givenString < "A") { // if the string is just decimal numbers, go with this path. comparing against "A" will result in false for any strings with anything higher than a decimal number, basically, but we'll do more checking inside the string itself.
             int errorCheckInteger = givenString.at(0)-'0'; // This is the additional checking.
             if (errorCheckInteger < 0 || errorCheckInteger > 9 || length > 4 || (length == 4 && (errorCheckInteger >= 4))) {
@@ -202,6 +203,7 @@ int main() {
             }
             cout << romanNumeral << endl;
         }
+        // Run this path to convert roman numeral to decimal
         else {
             int romanInt = 0; // this is ultimately the value that will be returned on this branch
 
